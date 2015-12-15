@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hcj-GT-QYi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="45B-ig-TQL">
+            <objects>
+                <tableViewController id="Hcj-GT-QYi" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gC4-ff-Esp">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rJQ-DZ-k7T" customClass="CustomCellTableViewCell" customModule="TestSlefCell" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rJQ-DZ-k7T" id="Heo-eF-iWS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7jb-jY-ePg">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="Qgt-6A-G5C"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Qgt-6A-G5C"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="Qgt-6A-G5C"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytr-ed-Fx4">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7jb-jY-ePg" secondAttribute="trailing" constant="46" id="0dD-yS-4zZ"/>
+                                        <constraint firstItem="ytr-ed-Fx4" firstAttribute="centerY" secondItem="7jb-jY-ePg" secondAttribute="centerY" id="1Yl-Ge-Jpk"/>
+                                        <constraint firstItem="7jb-jY-ePg" firstAttribute="top" secondItem="Heo-eF-iWS" secondAttribute="top" id="B01-R9-2uT"/>
+                                        <constraint firstItem="ytr-ed-Fx4" firstAttribute="top" secondItem="Heo-eF-iWS" secondAttribute="topMargin" constant="-1" id="NYX-R1-qJK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ytr-ed-Fx4" secondAttribute="bottom" constant="7.5" id="X1s-84-rNj"/>
+                                        <constraint firstItem="ytr-ed-Fx4" firstAttribute="leading" secondItem="Heo-eF-iWS" secondAttribute="leadingMargin" constant="12" id="fbC-rw-3nd"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="7jb-jY-ePg"/>
+                                            <exclude reference="ytr-ed-Fx4"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="1Yl-Ge-Jpk"/>
+                                            <exclude reference="NYX-R1-qJK"/>
+                                            <exclude reference="X1s-84-rNj"/>
+                                            <exclude reference="fbC-rw-3nd"/>
+                                            <exclude reference="0dD-yS-4zZ"/>
+                                            <exclude reference="B01-R9-2uT"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="7jb-jY-ePg"/>
+                                            <include reference="ytr-ed-Fx4"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="1Yl-Ge-Jpk"/>
+                                            <include reference="NYX-R1-qJK"/>
+                                            <include reference="X1s-84-rNj"/>
+                                            <include reference="fbC-rw-3nd"/>
+                                            <include reference="0dD-yS-4zZ"/>
+                                            <include reference="B01-R9-2uT"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hcj-GT-QYi" id="kcn-ZH-ig2"/>
+                            <outlet property="delegate" destination="Hcj-GT-QYi" id="YZS-Gn-Ey2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojD-VB-rOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94.5" y="247"/>
+        </scene>
+    </scenes>
+</document>

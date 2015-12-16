@@ -14,10 +14,18 @@ func SumOf(numbers: Int...) ->Int{
     //遍历参数数组,将其叠加
     var sum = 0
     for number in numbers {
-    sum += number
+        sum += number
     }
- return sum
+    return sum
 }
 
 //打印
 print(SumOf(1,2,3,4,5))
+
+var numbers = [20,19,17,12]
+//闭包
+numbers.map({
+    (number :Int) -> Int in
+    let result = 3 * number
+    return result
+})

@@ -11,4 +11,7 @@ import Foundation
 //print("Hello, World!")
 let a = 3
 assert(a >= 0 , "wrong value")
+//断言信息不能使用字符串插值,断言信息可以忽略
+assert(a <= 0)
+//只有当断言的条件为TRUE时,代码才会继续运行下去
 

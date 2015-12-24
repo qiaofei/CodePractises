@@ -10,11 +10,11 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        BOOL isTrrue = false;
-        int i = 0 ;
+        BOOL isTrrue = true;
+        int i = 10 ;
         // insert code here...
         if (isTrrue) {
-            NSLog(@"is ture");
+            NSLog(@"is ture %d" );
         }
         else{
             NSLog(@"is false");
@@ -24,3 +24,5 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
+
+//双引号的前面的@表示这双引号中的字符串应该作为cocoa的NSString元素来处理

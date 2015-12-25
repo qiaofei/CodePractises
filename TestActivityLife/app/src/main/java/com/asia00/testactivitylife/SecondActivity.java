@@ -45,4 +45,16 @@ public class SecondActivity extends Activity {
         super.onDestroy();
         Log.d("tag", "onDestroy" + tag);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d("tag", "onSaveInstanceState" + tag);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d("tag", "onRestoreInstanceState" + tag);
+    }
 }

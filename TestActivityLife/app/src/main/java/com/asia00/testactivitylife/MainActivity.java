@@ -61,4 +61,28 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d("tag", "onDestroy" + tag);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d("tag", "onSaveInstanceState" + tag);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d("tag", "onRestoreInstanceState" + tag);
+    }
+    /*      12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tagonPause 1
+            12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tag: onSaveInstanceState 1
+            12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tag: onStop 1
+            12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tag: onDestroy 1
+            12-25 18:26:25.315 24499-24499/com.asia00.testactivitylife D/tag: onCreate 1
+            12-25 18:26:25.315 24499-24499/com.asia00.testactivitylife D/tag: onStart 1
+            12-25 18:26:25.315 24499-24499/com.asia00.testactivitylife D/tag: onRestoreInstanceState 1
+            12-25 18:26:25.325 24499-24499/com.asia00.testactivitylife D/tag: onResume 1*/
+    //正确的Activity生命周期
+    // 打开Activity onCreate -> onStart -> onResume
+    //关闭Activity onPause -> onStop -> onDestroy
+    //倒转Activity onPause -> onSaveInstance -> onStop -> onDestroy -> onCreate -> onStart -> onRestoreInstanceState
 }

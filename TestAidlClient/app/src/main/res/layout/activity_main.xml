@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.asia00.testaidlclient.MainActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bindBtn"
+        android:id="@+id/bindBtn"
+        android:layout_marginTop="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/unbindBtn"
+        android:layout_alignStart="@+id/unbindBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="greetBtn"
+        android:id="@+id/greetBtn"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/bindBtn"
+        android:layout_alignLeft="@+id/bindBtn"
+        android:layout_alignStart="@+id/bindBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unbindBtn"
+        android:id="@+id/unbindBtn"
+        android:layout_marginTop="71dp"
+        android:layout_below="@+id/greetBtn"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

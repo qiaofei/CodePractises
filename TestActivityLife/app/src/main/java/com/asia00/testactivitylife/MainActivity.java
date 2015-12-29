@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         Log.d("tag", "onNewIntent" + tag);
     }
-    /*      12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tagonPause 1
+    /*      12-25 18:26:25.245 24499-24499/com.asia00.te stactivitylife D/tagonPause 1
             12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tag: onSaveInstanceState 1
             12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tag: onStop 1
             12-25 18:26:25.245 24499-24499/com.asia00.testactivitylife D/tag: onDestroy 1

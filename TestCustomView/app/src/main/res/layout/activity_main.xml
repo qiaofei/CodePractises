@@ -11,8 +11,10 @@
     tools:context="com.asia00.testcustomview.MainActivity">
 
     <com.asia00.testcustomview.CircleView
+        android:id="@+id/circleView"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_margin="20dp"
         android:padding="20dp"
         app:circle_color="@color/colorAccent" />
 </RelativeLayout>

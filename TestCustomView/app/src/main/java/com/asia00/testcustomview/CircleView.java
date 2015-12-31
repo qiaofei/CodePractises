@@ -22,24 +22,30 @@ public class CircleView extends View {
 
     public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setCustomDef(context, attrs);
     }
 
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        //
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
-        mColor = a.getColor(R.styleable.CircleView_circle_color, Color.RED);
-        a.recycle();
-        init();
+        setCustomDef(context, attrs);
     }
 
     public void init() {
         mPaint.setColor(mColor);
     }
 
+    //自定义属性
+    public void setCustomDef(Context context, AttributeSet attrs) {
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
+        mColor = a.getColor(R.styleable.CircleView_circle_color, Color.RED);
+        a.recycle();
+        init();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+//        mPaint.setColor(mColor);
         final int paddingLeft = getPaddingLeft();
         final int paddingTop = getPaddingTop();
         final int paddingRight = getPaddingRight();

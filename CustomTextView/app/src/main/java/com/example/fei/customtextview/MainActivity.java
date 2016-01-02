@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 //        在view的构造方法中获取到我们自定义属性
 //        重写onMeasure
 //        重写onDraw
-        
+
     }
 
     @Override

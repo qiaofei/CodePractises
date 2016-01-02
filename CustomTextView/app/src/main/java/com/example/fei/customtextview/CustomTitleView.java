@@ -4,6 +4,8 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -25,7 +27,9 @@ public class CustomTitleView extends View {
     }
 
     public CustomTitleView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+//        super(context, attrs);
+        this(context, attrs, 0);
+//    this(context,attrs,R.attr.);
     }
 
     public CustomTitleView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -43,7 +47,7 @@ public class CustomTitleView extends View {
                 case R.styleable.CustomTitleView_titleText:
                     mTitleText = a.getString(attr);
                     break;
-                case R.styleable.CustomTitleView_titleTextColor:
+                case R.styleable.CustomTitleView_titleTextColorr:
                     mTitleTextColor = a.getInt(attr, Color.BLACK);
                     break;
                 case R.styleable.CustomTitleView_titleTextSize:
@@ -53,5 +57,12 @@ public class CustomTitleView extends View {
             }
         }
         a.recycle();
+        //绘制文本
+        //定义画笔
+        Paint mPaint = new Paint();
+        mPaint.setColor(mTitleTextColor);
+        mPaint.setTextSize(mTitleTextSize);
+        Rect mRect = new Rect();
+        mPaint.getTextBounds(mTitleText,0,mTitleText.length(),mRect);
     }
 }

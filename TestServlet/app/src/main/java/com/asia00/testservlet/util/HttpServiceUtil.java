@@ -1,13 +1,4 @@
-package com.asia00.testservlet;
-
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+package com.asia00.testservlet.util;
 
 import com.asia00.testservlet.bean.UserInfo;
 import com.google.gson.Gson;
@@ -21,51 +12,14 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
-    EditText etName;
-    EditText etPassword;
-    Button btnLogin;
-    Message message;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        etName = (EditText) findViewById(R.id.etName);
-        etPassword = (EditText) findViewById(R.id.etPassword);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        message = new Message();
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkLogin();
-            }
-        });
-    }
-
-
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 0:
-                    Toast.makeText(getApplicationContext(), "用户名密码正确", Toast.LENGTH_SHORT).show();
-                    break;
-                case 1:
-                    Toast.makeText(getApplicationContext(), "用户名密码错误", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
-    };
-
-    //判断是否登陆成功
-    public void checkLogin() {
+/**
+ * Created by QiaoFei on 2016/1/6.
+ */
+public class HttpServiceUtil {
+    public static void get() {
 
         //开启线程网络请求
         new Thread(new Runnable() {
-            String userName = etName.getText().toString();
-            String userPassword = etPassword.getText().toString();
-
             @Override
             public void run() {
                 //使用http请求,总共分五步
@@ -84,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
                         //使用gson将字符串转换成对应的Bean
                         Gson gson = new Gson();
                         UserInfo userInfo = gson.fromJson(response, UserInfo.class);
-                        //判断用户名和密码是否正确
+                        /*//判断用户名和密码是否正确
                         if (userName.equals(userInfo.getUserName()) && userPassword.equals(userInfo.getUserPassword())) {
                             message.what = 0;
                         } else {
                             message.what = 1;
                         }
-                        handler.sendMessage(message);
+                        handler.sendMessage(message);*/
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

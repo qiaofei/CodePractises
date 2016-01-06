@@ -1,4 +1,4 @@
-package com.asia00.testservlet;
+package bean;
 
 public class UserInfo {
 	private String userName;

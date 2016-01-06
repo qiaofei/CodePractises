@@ -1,5 +1,6 @@
 package com.asia00.testservlet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etPassword;
     Button btnLogin;
     Message message;
+    Button btnGo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,18 @@ public class MainActivity extends AppCompatActivity {
         etName = (EditText) findViewById(R.id.etName);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
+        btnGo = (Button) findViewById(R.id.btnGo);
         message = new Message();
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkLogin();
+            }
+        });
+        btnGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UserListActivity.class));
             }
         });
     }
@@ -72,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 //1,创建httpClient对象
                 HttpClient httpCient = new DefaultHttpClient();
                 //第二步：创建代表请求的对象,参数是访问的服务器地址
-                HttpGet httpGet = new HttpGet("http://192.168.1.111:8080/th/servlet/AppTestServlet");
+                HttpGet httpGet = new HttpGet("http://192.168.1.189:8080/th/servlet/AppTestServlet");
                 try {
                     //3,执行请求,获取服务器返回的对象
                     HttpResponse httpResponse = httpCient.execute(httpGet);

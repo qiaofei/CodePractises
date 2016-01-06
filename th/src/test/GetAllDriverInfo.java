@@ -54,7 +54,7 @@ public class GetAllDriverInfo extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		// �õ�������ݿ��connection
 		ConnectJDBC connectJDBC = new ConnectJDBC();
@@ -107,7 +107,7 @@ public class GetAllDriverInfo extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");

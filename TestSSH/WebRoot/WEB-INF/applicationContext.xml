@@ -19,8 +19,8 @@
 		</property>
 			<!-- 定义映射的文件 -->
 			<property name="mappingResources">
-				<value>User.hbm.xml</value>
-			</property>
+				<list>
+					<value>entity/UserInfo.hbm.xml</value></list></property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">

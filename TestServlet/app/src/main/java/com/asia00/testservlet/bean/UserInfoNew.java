@@ -3,10 +3,20 @@ package com.asia00.testservlet.bean;
 public class UserInfoNew {
     private String userName;
     private String userTel;
+    private String userPassword;
 
-    public UserInfoNew(String userName, String userTel) {
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public UserInfoNew(String userName, String userTel, String userPassword) {
         this.userName = userName;
         this.userTel = userTel;
+        this.userPassword = userPassword;
     }
 
     public String getUserName() {

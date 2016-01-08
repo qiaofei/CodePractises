@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="TestSpringMvc Maven Webapp">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resouces"/>
+        <property name="context-root" value="/TestSpringMvc"/>
+        <property name="java-output-path" value="/TestSpringMvc Maven Webapp/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

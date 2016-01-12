@@ -4,9 +4,14 @@
 	<package name="user" extends="json-default" namespace="/user">
 		<action name="showAllUsers" class="userInfoAction" method="getAllUserInfo">
 			<result type="json">
-        		<param name="root">transMsg</param>
-        		<!-- <param name="callbackParameter">callback</param> -->
-        	</result>
+				<param name="root">transMsg</param>
+				<!-- <param name="callbackParameter">callback</param> -->
+			</result>
+		</action>
+		<action name="login" class="userInfoAction" method="checkLogin">
+			<result type="json">
+				<param name="root">transMsg</param>
+			</result>
 		</action>
 	</package>
 </struts>

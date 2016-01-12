@@ -21,4 +21,22 @@ public class UserService {
 		List<UserInfo> userList = userDao.getAllUsers(sSql);
 		return userList;
 	}
+
+	/**
+	 * 用户登陆
+	 */
+	public UserInfo checkLogin(String username, String password) {
+		/*
+		 * String sSql = "from UserInfo where "+"username = '" + username + "' "
+		 * + "and password = '" + password + "'";
+		 */
+		String sSql = "from UserInfo where " + "username = '" + username
+				+ "' " + "and password = '" + password + "'";
+		List<UserInfo> userList = userDao.getUserSql(sSql);
+		if (userList == null || userList.size() <= 0) {
+			return null;
+		} else {
+			return userList.get(0);
+		}
+	}
 }

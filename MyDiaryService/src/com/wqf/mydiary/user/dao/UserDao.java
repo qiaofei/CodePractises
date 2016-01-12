@@ -22,4 +22,14 @@ public class UserDao extends HibernateDaoSupport{
 		}
 		return list;
 	}
+	public List<UserInfo> getUserSql(String sSql){
+		Session session = this.getSession();
+		List<UserInfo> list = new ArrayList<UserInfo>();
+		try{
+			Query query = session.createQuery(sSql);
+			list = query.list();
+		}catch(Exception e){
+		}
+		return list;
+	}
 }

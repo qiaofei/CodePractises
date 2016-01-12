@@ -12,9 +12,27 @@ public class UserAction extends ActionSupport {
 	private UserService userService;
 	private List<UserInfo> userList;
 	private TransMsg transMsg;
+	private String username;
+	private String password;
 
 	public TransMsg getTransMsg() {
 		return transMsg;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setTransMsg(TransMsg transMsg) {
@@ -37,11 +55,29 @@ public class UserAction extends ActionSupport {
 		this.userService = userService;
 	}
 
+	/**
+	 * 获取所有用户信息
+	 * 
+	 * @return
+	 */
 	public String getAllUserInfo() {
 		userList = userService.getAllUserList();
 		// 将list放入transMsg中
 		if (userList != null) {
 			transMsg = TransMsgUtil.setTransMsg(1, "List", userList);
+		}
+		return "success";
+	}
+
+	/**
+	 * 用户登陆
+	 * 
+	 * @return
+	 */
+	public String checkLogin() {
+		UserInfo userInfo = userService.checkLogin(username, password);
+		if (userInfo != null) {
+			transMsg = TransMsgUtil.setTransMsg(1, userInfo.getId() + "");
 		}
 		return "success";
 	}

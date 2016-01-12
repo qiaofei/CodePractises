@@ -1,7 +1,6 @@
 package com.asia00.mydiary.view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -9,7 +8,7 @@ import android.view.animation.Animation;
 
 import com.asia00.mydiary.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +51,16 @@ public class SplashActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         this.finish();
+    }
+
+    /**
+     * 返回按钮
+     */
+    public void onBackPressed() {
+        /*Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);*/
+        moveTaskToBack(true);
     }
 }

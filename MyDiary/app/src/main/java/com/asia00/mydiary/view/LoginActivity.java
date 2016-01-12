@@ -382,10 +382,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onSuccess(Object result, int status) {
                 if (1 == status) {
                     showProgress(false);
-                    Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_LONG).show();
                 }
+                Toast.makeText(getApplicationContext(), (String) result, Toast.LENGTH_LONG).show();
             }
         }, this, hashMap, CommonUrl.REGISTERURL, String.class);
     }

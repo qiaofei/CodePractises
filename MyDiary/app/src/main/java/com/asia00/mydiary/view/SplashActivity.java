@@ -47,4 +47,10 @@ public class SplashActivity extends AppCompatActivity {
     public void splashAction() {
         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.finish();
+    }
 }

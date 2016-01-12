@@ -50,11 +50,11 @@ public class UserService {
 	public String insertNewUser(String username, String password) {
 		try {
 			// 先判断用户名是否已存在
-			String querySql = "from UserInfo where username = '" + username
-					+ "'";
+			String querySql = "from UserInfo where " + "username = '"
+					+ username + "' ";
 			List<UserInfo> list = userDao.getUserSql(querySql);
 			if (list != null && list.size() > 0) {
-				throw new Exception("手机号已存在");
+				return "该用户已存在";
 			}
 			/* 插入新用户信息 */
 			String insertSql = "insert into user_info "

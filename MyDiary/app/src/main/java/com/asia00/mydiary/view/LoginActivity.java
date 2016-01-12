@@ -311,12 +311,11 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         ServiceUtil.volleyPost(new ServiceUtil.VolleyCallback() {
             @Override
             public void onSuccess(Object result, int status) {
+                showProgress(false);
                 if (1 == status) {
-                    showProgress(false);
-                    Toast.makeText(getApplicationContext(), "登陆成功", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "登陆成功", Toast.LENGTH_SHORT).show();
                 } else {
-//                    registerAccount(userName, passWord);
-                    Toast.makeText(getApplicationContext(), "登陆失败", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "登陆失败", Toast.LENGTH_SHORT).show();
                 }
             }
         }, this, hashMap, CommonUrl.LOGINURL, String.class);

@@ -65,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
     private long exitTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    attemptLoginRegister(0);
                     return true;
                 }
                 return false;
@@ -88,7 +89,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                attemptLoginRegister(0);
+            }
+        });
+        Button mRegisterButton = (Button) findViewById(R.id.email_register_button);
+        mRegisterButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attemptLoginRegister(1);
             }
         });
 
@@ -145,7 +153,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
+    private void attemptLoginRegister(int actionType) {
         /*if (mAuthTask != null) {
             return;
         }*/
@@ -186,7 +194,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             /*mAuthTask = new UserLoginTask(userName, password);
             mAuthTask.execute((Void) null);*/
             //使用volley检查是否登陆成功
-            checkLogon(userName, password);
+            if (0 == actionType) {
+                checkLogon(userName, password);
+            } else {
+                registerAccount(userName, password);
+            }
         }
     }
 
@@ -343,7 +355,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }*/
     //检查是否登陆成功
     public void checkLogon(final String userName, final String passWord) {
-        final HashMap hashMap = new HashMap();
+        HashMap hashMap = new HashMap();
         hashMap.put("username", userName);
         hashMap.put("password", passWord);
         ServiceUtil.volleyPost(new ServiceUtil.VolleyCallback() {
@@ -370,9 +382,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onSuccess(Object result, int status) {
                 if (1 == status) {
                     showProgress(false);
+                    Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_LONG).show();
                 }
             }
-        }, this, hashMap, CommonUrl.BASESERVICEURL, String.class);
+        }, this, hashMap, CommonUrl.REGISTERURL, String.class);
     }
 
     @Override

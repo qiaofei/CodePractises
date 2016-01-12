@@ -78,7 +78,20 @@ public class UserAction extends ActionSupport {
 		UserInfo userInfo = userService.checkLogin(username, password);
 		if (userInfo != null) {
 			transMsg = TransMsgUtil.setTransMsg(1, userInfo.getId() + "");
+		} else {
+			transMsg = TransMsgUtil.setTransMsg(0, "输入信息有误！");
 		}
+		return "success";
+	}
+
+	public String register() {
+		String msg = "";
+		try {
+			msg = userService.insertNewUser(username, password);
+		} catch (Exception e) {
+			msg = e.getMessage();
+		}
+		transMsg = TransMsgUtil.setTransMsg(1, msg);
 		return "success";
 	}
 }

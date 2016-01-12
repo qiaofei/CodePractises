@@ -13,5 +13,10 @@
 				<param name="root">transMsg</param>
 			</result>
 		</action>
+		<action name="register" class="userInfoAction" method="register">
+			<result type="json">
+				<param name="root">transMsg</param>
+			</result>
+		</action>
 	</package>
 </struts>

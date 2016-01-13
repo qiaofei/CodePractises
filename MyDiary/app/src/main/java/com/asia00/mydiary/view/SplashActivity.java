@@ -17,9 +17,14 @@ public class SplashActivity extends BaseActivity {
         setContentView(view);
         // 渐变展示启动屏
         setAnimation(view);
+        initSharedPreference();
     }
 
-    //缓冲页
+    /**
+     * 缓冲动画
+     *
+     * @param view
+     */
     public void setAnimation(View view) {
         AlphaAnimation aa = new AlphaAnimation(0.5f, 1.0f);
         aa.setDuration(800);
@@ -42,9 +47,17 @@ public class SplashActivity extends BaseActivity {
         });
     }
 
-    //缓冲页面操作
+    /**
+     * 缓冲页面操作
+     */
     public void splashAction() {
-        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+        //判断是否登陆过
+        String isLogin = mSharedPreferences.getString("isLogin", "false");
+        if ("true".equals(isLogin)) {
+            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        } else {
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+        }
     }
 
     @Override

@@ -3,9 +3,9 @@ package com.asia00.mydiary.view;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -64,7 +64,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    private long exitTime = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +102,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+        initSharedPreference();
     }
 
     private void populateAutoComplete() {
@@ -314,6 +315,8 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
                 showProgress(false);
                 if (1 == status) {
                     Toast.makeText(getApplicationContext(), "登陆成功", Toast.LENGTH_SHORT).show();
+                    //保存登陆信息并跳转至主界面
+                    saveLogin(userName);
                 } else {
                     Toast.makeText(getApplicationContext(), "登陆失败", Toast.LENGTH_SHORT).show();
                 }
@@ -321,7 +324,12 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         }, this, hashMap, CommonUrl.LOGINURL, String.class);
     }
 
-    //注册帐号
+    /**
+     * 注册账号
+     *
+     * @param userName
+     * @param passWord
+     */
     public void registerAccount(String userName, String passWord) {
         HashMap hashMap = new HashMap();
         hashMap.put("username", userName);
@@ -337,17 +345,19 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         }, this, hashMap, CommonUrl.REGISTERURL, String.class);
     }
 
+    /**
+     * 登陆成功后保存登陆信息
+     */
+    public void saveLogin(String userName) {
+        mEditor.putString("isLogin", "true");
+        mEditor.putString("username", userName);
+        mEditor.commit();
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+    }
+
+    @Override
     public void onBackPressed() {
-        if ((System.currentTimeMillis() - exitTime) > 2000) {
-            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
-            exitTime = System.currentTimeMillis();
-        } else {
-            for (Activity activity : sAllActivitys) {
-                activity.finish();
-            }
-            sAllActivitys.clear();
-            System.exit(0);
-        }
+        super.onBackPressed();
     }
 
     @Override

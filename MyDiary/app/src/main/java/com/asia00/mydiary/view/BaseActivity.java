@@ -2,11 +2,13 @@ package com.asia00.mydiary.view;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 
@@ -17,6 +19,9 @@ import butterknife.ButterKnife;
  */
 public class BaseActivity extends AppCompatActivity {
     public static LinkedList<Activity> sAllActivitys = new LinkedList<Activity>();
+    public SharedPreferences mSharedPreferences;
+    public SharedPreferences.Editor mEditor;
+    private long exitTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +43,7 @@ public class BaseActivity extends AppCompatActivity {
         initData();
         initView();
     }
-    /*protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
-            // Activity was brought to front and not created,
-            // Thus finishing this will get us to the last viewed activity
-            finish();
-            return;
-        }
 
-        init();
-    }*/
-    //初始化控件
     public void initView() {
     }
 
@@ -65,13 +59,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-  /*  public void closeAllActivity() {
-        for (Activity activity : sAllActivitys) {
-            activity.finish();
-            sAllActivitys.remove(activity);
-        }
-    }*/
-
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -79,5 +66,28 @@ public class BaseActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 初始化SharedPreference
+     */
+    public void initSharedPreference() {
+        mSharedPreferences =
+                getSharedPreferences("MyDiaryPreference", MODE_PRIVATE);
+        mEditor = mSharedPreferences.edit();
+    }
+
+    public void onBackPressed() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            for (Activity activity : sAllActivitys) {
+                activity.finish();
+            }
+
+            sAllActivitys.clear();
+            System.exit(0);
+        }
     }
 }

@@ -3,15 +3,25 @@ package com.asia00.mydiary.view;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
 
 import com.asia00.mydiary.R;
+import com.asia00.mydiary.entity.DiaryInfo;
+import com.asia00.mydiary.util.CommonUrl;
+import com.asia00.mydiary.util.ServiceUtil;
+import com.joanzapata.android.BaseAdapterHelper;
+import com.joanzapata.android.QuickAdapter;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class MainActivity extends BaseActivity {
+
+    private ListView listView;
+    private QuickAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        listView = (ListView) findViewById(R.id.lvMyDiary);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        initSharedPreference();
+        showDiaryList();
     }
 
     @Override
@@ -50,5 +62,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 获取日志列表
+     */
+    public void showDiaryList() {
+        int userId = mSharedPreferences.getInt("userid", 0);
+        ServiceUtil.getResponse(new ServiceUtil.VolleyCallback() {
+            @Override
+            public void onSuccess(Object result, int status) {
+                listView.setAdapter(mAdapter = new QuickAdapter<DiaryInfo>(
+                        getApplicationContext(), R.layout.item_listview_diary_list,
+                        (ArrayList<DiaryInfo>) result) {
+                    @Override
+                    protected void convert(BaseAdapterHelper helper, DiaryInfo item) {
+                        helper.setText(R.id.tvDiaryTitle, item.getTitle());
+                        helper.setText(R.id.tvDiaryContent, item.getContent());
+                        helper.setText(R.id.tvDiaryTime, item.getTime());
+                    }
+                });
+            }
+        }, this, CommonUrl.GETDIARYBYUSERIDURL + "?userId=" + userId, DiaryInfo.class);
     }
 }

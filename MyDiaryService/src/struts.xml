@@ -3,4 +3,5 @@
 <struts>
 <constant name="struts.objectFactory" value="spring" /> 
 	<include file="com/wqf/mydiary/config/struts-user.xml"/>
+	<include file="com/wqf/mydiary/config/struts-diary.xml"/>
 </struts>

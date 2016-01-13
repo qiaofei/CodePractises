@@ -8,4 +8,5 @@ public class CommonUrl {
     public static final String BASESERVICEURL = "http://192.168.1.189:8080/MyDiaryService/";
     public static final String LOGINURL = "user/login";
     public static final String REGISTERURL = "user/register";
+    public static final String GETDIARYBYUSERIDURL = "diary/getDiaryInfoById";
 }

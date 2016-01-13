@@ -28,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.asia00.mydiary.R;
+import com.asia00.mydiary.entity.UserInfo;
 import com.asia00.mydiary.util.CommonUrl;
 import com.asia00.mydiary.util.ServiceUtil;
 
@@ -315,13 +316,14 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
                 showProgress(false);
                 if (1 == status) {
                     Toast.makeText(getApplicationContext(), "登陆成功", Toast.LENGTH_SHORT).show();
+//                    int id = ((UserInfo) result).getId();
                     //保存登陆信息并跳转至主界面
-                    saveLogin(userName);
+                    saveLogin(userName, 1);
                 } else {
                     Toast.makeText(getApplicationContext(), "登陆失败", Toast.LENGTH_SHORT).show();
                 }
             }
-        }, this, hashMap, CommonUrl.LOGINURL, String.class);
+        }, this, hashMap, CommonUrl.LOGINURL, UserInfo.class);
     }
 
     /**
@@ -348,9 +350,10 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
     /**
      * 登陆成功后保存登陆信息
      */
-    public void saveLogin(String userName) {
+    public void saveLogin(String userName, int id) {
         mEditor.putString("isLogin", "true");
         mEditor.putString("username", userName);
+        mEditor.putInt("userid", id);
         mEditor.commit();
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
     }

@@ -316,9 +316,10 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
                 showProgress(false);
                 if (1 == status) {
                     Toast.makeText(getApplicationContext(), "登陆成功", Toast.LENGTH_SHORT).show();
-//                    int id = ((UserInfo) result).getId();
+                    String a[] = ((String) result).split(":");
+                    int userId = Integer.parseInt(a[0]);
                     //保存登陆信息并跳转至主界面
-                    saveLogin(userName, 1);
+                    saveLogin(userName, userId);
                 } else {
                     Toast.makeText(getApplicationContext(), "登陆失败", Toast.LENGTH_SHORT).show();
                 }

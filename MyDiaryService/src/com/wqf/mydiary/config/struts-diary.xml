@@ -7,5 +7,10 @@
 				<param name="root">transMsg</param>
 			</result>
 		</action>
+		<action name="insertNewDiary" class="diaryInfoAction" method="insertNewDiary">
+			<result type="json">
+				<param name="root">transMsg</param>
+			</result>
+		</action>
 	</package>
 </struts>

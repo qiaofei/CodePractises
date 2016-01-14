@@ -13,6 +13,42 @@ public class DiaryInfoAction extends ActionSupport {
 	private DiaryInfoService diaryInfoService;
 	private List<DiaryInfo> diaryList;
 	private TransMsg transMsg;
+	private DiaryInfo diaryInfo;
+	private String sCurrTime;
+	private String sTitle;
+	private String sContent;
+
+	public DiaryInfo getDiaryInfo() {
+		return diaryInfo;
+	}
+
+	public void setDiaryInfo(DiaryInfo diaryInfo) {
+		this.diaryInfo = diaryInfo;
+	}
+
+	public String getsCurrTime() {
+		return sCurrTime;
+	}
+
+	public void setsCurrTime(String sCurrTime) {
+		this.sCurrTime = sCurrTime;
+	}
+
+	public String getsTitle() {
+		return sTitle;
+	}
+
+	public void setsTitle(String sTitle) {
+		this.sTitle = sTitle;
+	}
+
+	public String getsContent() {
+		return sContent;
+	}
+
+	public void setsContent(String sContent) {
+		this.sContent = sContent;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -63,4 +99,15 @@ public class DiaryInfoAction extends ActionSupport {
 		return "success";
 	}
 
+	public String insertNewDiary() {
+		String msg = "";
+		try {
+			msg = diaryInfoService.insertNewDiary(sTitle, sContent,
+					"" + userId, sCurrTime);
+		} catch (Exception e) {
+			msg = e.getMessage();
+		}
+		transMsg = TransMsgUtil.setTransMsg(1, msg);
+		return "success";
+	}
 }

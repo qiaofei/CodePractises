@@ -10,4 +10,5 @@ public class CommonUrl {
     public static final String LOGINURL = "user/login";
     public static final String REGISTERURL = "user/register";
     public static final String GETDIARYBYUSERIDURL = "diary/getDiaryInfoById";
+    public static final String SAVEDIARYURL = "diary/insertNewDiary";
 }

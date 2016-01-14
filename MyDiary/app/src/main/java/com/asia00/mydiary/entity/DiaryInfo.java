@@ -8,7 +8,6 @@ public class DiaryInfo implements java.io.Serializable {
 
     // Fields
 
-    private Integer id;
     private String title;
     private String content;
     private Integer userid;
@@ -23,15 +22,6 @@ public class DiaryInfo implements java.io.Serializable {
     }
 
     /**
-     * minimal constructor
-     */
-    public DiaryInfo(String title, Integer userid, String time) {
-        this.title = title;
-        this.userid = userid;
-        this.time = time;
-    }
-
-    /**
      * full constructor
      */
     public DiaryInfo(String title, String content, Integer userid,
@@ -43,14 +33,6 @@ public class DiaryInfo implements java.io.Serializable {
     }
 
     // Property accessors
-
-    public Integer getId() {
-        return this.id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return this.title;

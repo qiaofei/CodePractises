@@ -62,10 +62,10 @@ public class DiaryActivity extends BaseActivity {
             Toast.makeText(this, "标题不能为空！", Toast.LENGTH_SHORT).show();
             return;
         }
-        hashMap.put("sTitle", sTitle);
-        hashMap.put("sContent", sContent);
+        hashMap.put("title", sTitle);
+        hashMap.put("content", sContent);
         hashMap.put("userId", userId);
-        hashMap.put("sCurrTime", sCurrTime);
+        hashMap.put("currTime", sCurrTime);
         //将localDiary上传至服务器
         ServiceUtil.volleyPost(new ServiceUtil.VolleyCallback() {
             @Override

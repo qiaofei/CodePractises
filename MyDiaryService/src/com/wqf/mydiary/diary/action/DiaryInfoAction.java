@@ -14,9 +14,33 @@ public class DiaryInfoAction extends ActionSupport {
 	private List<DiaryInfo> diaryList;
 	private TransMsg transMsg;
 	private DiaryInfo diaryInfo;
-	private String sCurrTime;
-	private String sTitle;
-	private String sContent;
+	private String currTime;
+	private String title;
+	private String content;
+
+	public String getCurrTime() {
+		return currTime;
+	}
+
+	public void setCurrTime(String currTime) {
+		this.currTime = currTime;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
 
 	public DiaryInfo getDiaryInfo() {
 		return diaryInfo;
@@ -24,30 +48,6 @@ public class DiaryInfoAction extends ActionSupport {
 
 	public void setDiaryInfo(DiaryInfo diaryInfo) {
 		this.diaryInfo = diaryInfo;
-	}
-
-	public String getsCurrTime() {
-		return sCurrTime;
-	}
-
-	public void setsCurrTime(String sCurrTime) {
-		this.sCurrTime = sCurrTime;
-	}
-
-	public String getsTitle() {
-		return sTitle;
-	}
-
-	public void setsTitle(String sTitle) {
-		this.sTitle = sTitle;
-	}
-
-	public String getsContent() {
-		return sContent;
-	}
-
-	public void setsContent(String sContent) {
-		this.sContent = sContent;
 	}
 
 	public String getUserId() {
@@ -102,12 +102,20 @@ public class DiaryInfoAction extends ActionSupport {
 	public String insertNewDiary() {
 		String msg = "";
 		try {
-			msg = diaryInfoService.insertNewDiary(sTitle, sContent,
-					"" + userId, sCurrTime);
+			msg = diaryInfoService.insertNewDiary(title, content, "" + userId,
+					currTime);
 		} catch (Exception e) {
 			msg = e.getMessage();
 		}
 		transMsg = TransMsgUtil.setTransMsg(1, msg);
 		return "success";
+	}
+
+	/**
+	 * 将客户端接收的TimeString转成时间戳格式
+	 */
+	public String converStringToTimestamp(String sTime) {
+
+		return "";
 	}
 }

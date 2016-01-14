@@ -1,7 +1,5 @@
 package com.wqf.mydiary.diary.entity;
 
-import java.sql.Timestamp;
-
 /**
  * DiaryInfo entity. @author MyEclipse Persistence Tools
  */
@@ -14,7 +12,7 @@ public class DiaryInfo implements java.io.Serializable {
 	private String title;
 	private String content;
 	private Integer userid;
-	private Timestamp time;
+	private String time;
 
 	// Constructors
 
@@ -23,15 +21,14 @@ public class DiaryInfo implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public DiaryInfo(String title, Integer userid, Timestamp time) {
+	public DiaryInfo(String title, Integer userid, String time) {
 		this.title = title;
 		this.userid = userid;
 		this.time = time;
 	}
 
 	/** full constructor */
-	public DiaryInfo(String title, String content, Integer userid,
-			Timestamp time) {
+	public DiaryInfo(String title, String content, Integer userid, String time) {
 		this.title = title;
 		this.content = content;
 		this.userid = userid;
@@ -72,11 +69,11 @@ public class DiaryInfo implements java.io.Serializable {
 		this.userid = userid;
 	}
 
-	public Timestamp getTime() {
+	public String getTime() {
 		return this.time;
 	}
 
-	public void setTime(Timestamp time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 

@@ -19,8 +19,8 @@
         <property name="userid" type="java.lang.Integer">
             <column name="userid" not-null="true" />
         </property>
-        <property name="time" type="java.sql.Timestamp">
-            <column name="time" length="19" not-null="true" />
+        <property name="time" type="java.lang.String">
+            <column name="time" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

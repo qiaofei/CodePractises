@@ -99,6 +99,11 @@ public class DiaryInfoAction extends ActionSupport {
 		return "success";
 	}
 
+	/**
+	 * 插入新日志
+	 * 
+	 * @return
+	 */
 	public String insertNewDiary() {
 		String msg = "";
 		try {
@@ -108,6 +113,22 @@ public class DiaryInfoAction extends ActionSupport {
 			msg = e.getMessage();
 		}
 		transMsg = TransMsgUtil.setTransMsg(1, msg);
+		return "success";
+	}
+
+	/**
+	 * 更新日志
+	 */
+	public String updateDiary() {
+		
+		return "success";
+	}
+
+	/**
+	 * 删除日志
+	 */
+	public String deleteDiary() {
+		
 		return "success";
 	}
 

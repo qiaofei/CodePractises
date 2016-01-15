@@ -74,4 +74,9 @@ public class DiaryActivity extends BaseActivity {
             }
         }, this, hashMap, CommonUrl.SAVEDIARYURL, String.class);
     }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+    }
 }

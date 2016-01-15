@@ -12,5 +12,15 @@
 				<param name="root">transMsg</param>
 			</result>
 		</action>
+		<action name="updateDiary" class="diaryInfoAction" method="updateDiary">
+			<result type="json">
+				<param name="root">transMsg</param>
+			</result>
+		</action>
+		<action name="deleteDiary" class="diaryInfoAction" method="deleteDiary">
+			<result type="json">
+				<param name="root">transMsg</param>
+			</result>
+		</action>
 	</package>
 </struts>

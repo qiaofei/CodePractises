@@ -64,4 +64,10 @@ public class DiaryInfoService {
 		boolean isOk = diaryInfoDao.exeSql(sSql);
 		return isOk;
 	}
+
+	public boolean deleteteDiary(int id) {
+		String sSql = "delete from diary_info where id = " + id;
+		boolean isOk = diaryInfoDao.exeSql(sSql);
+		return isOk;
+	}
 }

@@ -12,4 +12,5 @@ public class CommonUrl {
     public static final String GETDIARYBYUSERIDURL = "diary/getDiaryInfoById";
     public static final String SAVEDIARYURL = "diary/insertNewDiary";
     public static final String UPDATEDIARYURL = "diary/updateDiary";
+    public static final String DELETEDIARYURL = "diary/deleteDiary";
 }

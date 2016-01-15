@@ -143,7 +143,12 @@ public class DiaryInfoAction extends ActionSupport {
 	 * 删除日志
 	 */
 	public String deleteDiary() {
-
+		boolean isOk = diaryInfoService.deleteteDiary(id);
+		if(isOk){
+			transMsg = TransMsgUtil.setTransMsg(1, "success");
+		}else{
+			transMsg = TransMsgUtil.setTransMsg(0, "fail");
+		}
 		return "success";
 	}
 

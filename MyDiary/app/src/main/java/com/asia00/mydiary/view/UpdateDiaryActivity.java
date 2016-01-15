@@ -18,6 +18,7 @@ public class UpdateDiaryActivity extends BaseActivity {
     private EditText etTitle;
     private EditText etContent;
     private Button btnSave;
+    private Button btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,17 @@ public class UpdateDiaryActivity extends BaseActivity {
         etTitle = (EditText) findViewById(R.id.etTitle);
         etContent = (EditText) findViewById(R.id.etContent);
         btnSave = (Button) findViewById(R.id.btnSave);
+        btnDelete = (Button) findViewById(R.id.btnDelete);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateDiary();
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteDiary();
             }
         });
     }
@@ -68,7 +76,18 @@ public class UpdateDiaryActivity extends BaseActivity {
      * 删除日志
      */
     public void deleteDiary() {
-
+        //获取到diaryId
+        Intent intent = this.getIntent();
+        String diaryId = intent.getStringExtra("diaryId");
+        HashMap hashMap = new HashMap();
+        hashMap.put("id", diaryId);
+        //根据diaryId删除日志
+        ServiceUtil.volleyPost(new ServiceUtil.VolleyCallback() {
+            @Override
+            public void onSuccess(Object result, int status) {
+                Toast.makeText(getApplicationContext(), (String) result, Toast.LENGTH_LONG).show();
+            }
+        }, this, hashMap, CommonUrl.DELETEDIARYURL, String.class);
     }
 
     @Override

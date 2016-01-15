@@ -25,6 +25,7 @@ public class DiaryInfoDao extends HibernateDaoSupport {
 			query.executeUpdate();
 			isOk = true;
 		} catch (Exception e) {
+			e.printStackTrace();
 			// LogUtil.logError("driverError", e.toString());
 		}
 		return isOk;

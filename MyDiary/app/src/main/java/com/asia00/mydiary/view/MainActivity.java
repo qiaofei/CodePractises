@@ -75,10 +75,18 @@ public class MainActivity extends BaseActivity {
                         getApplicationContext(), R.layout.item_listview_diary_list,
                         (ArrayList<DiaryInfo>) result) {
                     @Override
-                    protected void convert(BaseAdapterHelper helper, DiaryInfo item) {
+                    protected void convert(BaseAdapterHelper helper, final DiaryInfo item) {
                         helper.setText(R.id.tvDiaryTitle, item.getTitle());
                         helper.setText(R.id.tvDiaryContent, item.getContent());
                         helper.setText(R.id.tvDiaryTime, item.getTime());
+                        helper.getView().setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(MainActivity.this, UpdateDiaryActivity.class);
+                                intent.putExtra("diaryId", ""+item.getId());
+                                startActivity(intent);
+                            }
+                        });
                     }
                 });
             }

@@ -17,6 +17,15 @@ public class DiaryInfoAction extends ActionSupport {
 	private String currTime;
 	private String title;
 	private String content;
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getCurrTime() {
 		return currTime;
@@ -120,7 +129,13 @@ public class DiaryInfoAction extends ActionSupport {
 	 * 更新日志
 	 */
 	public String updateDiary() {
-		
+		boolean isOk = diaryInfoService.updateDiary(title, content, currTime,
+				id);
+		if(isOk){
+			transMsg = TransMsgUtil.setTransMsg(1, "success");
+		}else{
+			transMsg = TransMsgUtil.setTransMsg(0, "fail");
+		}
 		return "success";
 	}
 
@@ -128,7 +143,7 @@ public class DiaryInfoAction extends ActionSupport {
 	 * 删除日志
 	 */
 	public String deleteDiary() {
-		
+
 		return "success";
 	}
 

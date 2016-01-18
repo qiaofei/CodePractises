@@ -13,8 +13,11 @@ int main(int argc, const char * argv[]) {
         // insert code here...
 //        NSLog(@"Hello, World!");
         Fraction *myFraction = [Fraction new];
-        [myFraction setNumberator:1];
-        [myFraction setDenominator:3];
+//        [myFraction setNumberator:1];
+//        [myFraction setDenominator:3];
+        [myFraction setTo:1 over:3];
+        [myFraction print];
+        [myFraction setTo:100 over:300];
         [myFraction print];
     }
     return 0;

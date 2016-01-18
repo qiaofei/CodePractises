@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Fraction : NSObject
+@property int numberator, denominator;
 -(void) print;
--(void) setNumberator: (int) n;
--(void) setDenominator: (int) d;
--(int) numberator;
--(int) denominator;
+//-(void) setNumberator: (int) n;
+//-(void) setDenominator: (int) d;
+//-(int) numberator;
+//-(int) denominator;
+-(void) setTo: (int) n over: (int) d;
 -(double) comverToNumber;
 @end

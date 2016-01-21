@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3cW-ub-clw">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--登录-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-qK-bzX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="OAx-Av-g4p"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MY-1b-N0l">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPt-zk-9f0">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-nK-NdN">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqF-fE-JLF">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLj-hd-NHU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="登录"/>
+                                <connections>
+                                    <segue destination="tn5-XY-p4x" kind="presentation" id="lQz-mU-SVc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBb-jZ-pIm">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="注册"/>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xLj-hd-NHU" firstAttribute="top" secondItem="aqF-fE-JLF" secondAttribute="bottom" constant="93" id="6KK-Oy-3xU"/>
+                            <constraint firstItem="aPt-zk-9f0" firstAttribute="top" secondItem="0MY-1b-N0l" secondAttribute="bottom" constant="47" id="7Vu-pi-d8N"/>
+                            <constraint firstItem="z0e-qK-bzX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8If-pi-nbC"/>
+                            <constraint firstItem="aqF-fE-JLF" firstAttribute="top" secondItem="2XH-nK-NdN" secondAttribute="bottom" constant="38" id="BAp-tW-6h7"/>
+                            <constraint firstItem="0MY-1b-N0l" firstAttribute="bottom" secondItem="2XH-nK-NdN" secondAttribute="bottom" id="Bjx-x9-p4W"/>
+                            <constraint firstItem="aqF-fE-JLF" firstAttribute="bottom" secondItem="aPt-zk-9f0" secondAttribute="bottom" id="FQg-Te-v6V"/>
+                            <constraint firstItem="aqF-fE-JLF" firstAttribute="leading" secondItem="2XH-nK-NdN" secondAttribute="leading" id="ORz-Bu-lC9"/>
+                            <constraint firstItem="0MY-1b-N0l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="89" id="SHW-VP-otD"/>
+                            <constraint firstItem="aqF-fE-JLF" firstAttribute="centerX" secondItem="xLj-hd-NHU" secondAttribute="centerX" id="eRK-02-jM2"/>
+                            <constraint firstItem="GBb-jZ-pIm" firstAttribute="leading" secondItem="xLj-hd-NHU" secondAttribute="leading" id="iZW-vl-DB0"/>
+                            <constraint firstItem="0MY-1b-N0l" firstAttribute="leading" secondItem="aPt-zk-9f0" secondAttribute="leading" id="jSV-0l-rBU"/>
+                            <constraint firstAttribute="trailing" secondItem="z0e-qK-bzX" secondAttribute="trailing" id="lSU-6Y-11A"/>
+                            <constraint firstItem="z0e-qK-bzX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nfd-hY-S19"/>
+                            <constraint firstItem="2XH-nK-NdN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="nqt-sc-nz0"/>
+                            <constraint firstItem="z0e-qK-bzX" firstAttribute="centerX" secondItem="2XH-nK-NdN" secondAttribute="centerX" id="oaM-vP-Fc1"/>
+                            <constraint firstItem="GBb-jZ-pIm" firstAttribute="top" secondItem="xLj-hd-NHU" secondAttribute="bottom" constant="57" id="oyU-fa-grt"/>
+                            <constraint firstItem="2XH-nK-NdN" firstAttribute="leading" secondItem="0MY-1b-N0l" secondAttribute="trailing" constant="29" id="r3D-vQ-f8g"/>
+                            <constraint firstItem="2XH-nK-NdN" firstAttribute="trailing" secondItem="aqF-fE-JLF" secondAttribute="trailing" id="r9w-ya-TIp"/>
+                            <constraint firstItem="0MY-1b-N0l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="rYz-dU-9Ak"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="z0e-qK-bzX"/>
+                                <exclude reference="0MY-1b-N0l"/>
+                                <exclude reference="aPt-zk-9f0"/>
+                                <exclude reference="2XH-nK-NdN"/>
+                                <exclude reference="aqF-fE-JLF"/>
+                                <exclude reference="xLj-hd-NHU"/>
+                                <exclude reference="GBb-jZ-pIm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="nqt-sc-nz0"/>
+                                <exclude reference="r3D-vQ-f8g"/>
+                                <exclude reference="r9w-ya-TIp"/>
+                                <exclude reference="BAp-tW-6h7"/>
+                                <exclude reference="FQg-Te-v6V"/>
+                                <exclude reference="ORz-Bu-lC9"/>
+                                <exclude reference="eRK-02-jM2"/>
+                                <exclude reference="iZW-vl-DB0"/>
+                                <exclude reference="oyU-fa-grt"/>
+                                <exclude reference="6KK-Oy-3xU"/>
+                                <exclude reference="Bjx-x9-p4W"/>
+                                <exclude reference="SHW-VP-otD"/>
+                                <exclude reference="jSV-0l-rBU"/>
+                                <exclude reference="rYz-dU-9Ak"/>
+                                <exclude reference="7Vu-pi-d8N"/>
+                                <exclude reference="8If-pi-nbC"/>
+                                <exclude reference="lSU-6Y-11A"/>
+                                <exclude reference="nfd-hY-S19"/>
+                                <exclude reference="oaM-vP-Fc1"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="z0e-qK-bzX"/>
+                                <include reference="0MY-1b-N0l"/>
+                                <include reference="aPt-zk-9f0"/>
+                                <include reference="2XH-nK-NdN"/>
+                                <include reference="aqF-fE-JLF"/>
+                                <include reference="xLj-hd-NHU"/>
+                                <include reference="GBb-jZ-pIm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="nqt-sc-nz0"/>
+                                <include reference="r3D-vQ-f8g"/>
+                                <include reference="r9w-ya-TIp"/>
+                                <include reference="BAp-tW-6h7"/>
+                                <include reference="FQg-Te-v6V"/>
+                                <include reference="ORz-Bu-lC9"/>
+                                <include reference="eRK-02-jM2"/>
+                                <include reference="iZW-vl-DB0"/>
+                                <include reference="oyU-fa-grt"/>
+                                <include reference="6KK-Oy-3xU"/>
+                                <include reference="Bjx-x9-p4W"/>
+                                <include reference="SHW-VP-otD"/>
+                                <include reference="jSV-0l-rBU"/>
+                                <include reference="rYz-dU-9Ak"/>
+                                <include reference="7Vu-pi-d8N"/>
+                                <include reference="8If-pi-nbC"/>
+                                <include reference="lSU-6Y-11A"/>
+                                <include reference="nfd-hY-S19"/>
+                                <include reference="oaM-vP-Fc1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="登录" id="Nm3-BB-Tb9"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1660.5" y="-353"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RHX-a9-LVB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWP-hE-A2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3cW-ub-clw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNQ-U2-vm9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PwI-rI-KGG"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="742.5" y="-353"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="U5T-47-c1Q">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVY-Jg-kzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ele-14-Doy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9wn-aQ-kAp"/>
+                        <viewControllerLayoutGuide type="bottom" id="kaX-hk-JUy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vNE-4j-Xnb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qem-zQ-pKN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="1SG-cI-wsG"/>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Qem-zQ-pKN"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Qem-zQ-pKN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q0P-c3-XTX"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1761" y="373"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UIi-ii-gGE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wf1-JN-dKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tn5-XY-p4x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XeJ-WA-ojq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ele-14-Doy" kind="relationship" relationship="rootViewController" id="qJS-2A-ib5"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="843" y="373"/>
+        </scene>
+    </scenes>
+</document>

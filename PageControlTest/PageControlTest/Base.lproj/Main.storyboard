@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="eEV-Aw-rc3">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="changePage:" destination="BYZ-38-t0r" eventType="valueChanged" id="1gQ-qn-f7f"/>
+                                </connections>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdp-x6-sjB">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eEV-Aw-rc3" firstAttribute="top" secondItem="Xdp-x6-sjB" secondAttribute="bottom" id="Iev-mK-bih"/>
+                            <constraint firstItem="Xdp-x6-sjB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R1O-Mz-PMh"/>
+                            <constraint firstItem="eEV-Aw-rc3" firstAttribute="centerX" secondItem="Xdp-x6-sjB" secondAttribute="centerX" id="R1W-h6-zwV"/>
+                            <constraint firstItem="Xdp-x6-sjB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jR6-Fy-gYc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eEV-Aw-rc3" secondAttribute="bottom" constant="46" id="lTc-6N-plV"/>
+                            <constraint firstAttribute="trailing" secondItem="Xdp-x6-sjB" secondAttribute="trailing" id="pQq-TL-Xiz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eEV-Aw-rc3"/>
+                                <exclude reference="Xdp-x6-sjB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="R1O-Mz-PMh"/>
+                                <exclude reference="jR6-Fy-gYc"/>
+                                <exclude reference="pQq-TL-Xiz"/>
+                                <exclude reference="Iev-mK-bih"/>
+                                <exclude reference="R1W-h6-zwV"/>
+                                <exclude reference="lTc-6N-plV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="eEV-Aw-rc3"/>
+                                <include reference="Xdp-x6-sjB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="R1O-Mz-PMh"/>
+                                <include reference="jR6-Fy-gYc"/>
+                                <include reference="pQq-TL-Xiz"/>
+                                <include reference="Iev-mK-bih"/>
+                                <include reference="R1W-h6-zwV"/>
+                                <include reference="lTc-6N-plV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="pageControl" destination="eEV-Aw-rc3" id="adc-qk-kYL"/>
+                        <outlet property="scrollView" destination="Xdp-x6-sjB" id="WeW-ft-MC1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-382.5" y="-1010"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="r4j-sb-g31">
+            <objects>
+                <viewController storyboardIdentifier="page1" id="2hy-aB-Zao" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZN-0o-aZ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="nBQ-tP-tDN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uZw-ae-VY0">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="达芬奇-蒙娜丽莎.png" translatesAutoresizingMaskIntoConstraints="NO" id="9tB-9S-Sch">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9tB-9S-Sch" firstAttribute="leading" secondItem="uZw-ae-VY0" secondAttribute="leading" id="Jgw-z8-k8T"/>
+                            <constraint firstItem="9tB-9S-Sch" firstAttribute="bottom" secondItem="nBQ-tP-tDN" secondAttribute="top" id="K7f-Sk-ace"/>
+                            <constraint firstAttribute="trailing" secondItem="9tB-9S-Sch" secondAttribute="trailing" id="fjp-qP-rmR"/>
+                            <constraint firstItem="9tB-9S-Sch" firstAttribute="top" secondItem="uZw-ae-VY0" secondAttribute="top" id="no0-G7-VrT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="9tB-9S-Sch"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Jgw-z8-k8T"/>
+                                <exclude reference="K7f-Sk-ace"/>
+                                <exclude reference="fjp-qP-rmR"/>
+                                <exclude reference="no0-G7-VrT"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="9tB-9S-Sch"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Jgw-z8-k8T"/>
+                                <include reference="K7f-Sk-ace"/>
+                                <include reference="fjp-qP-rmR"/>
+                                <include reference="no0-G7-VrT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z6-dx-fiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="363" y="-408"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dl4-Pm-P09">
+            <objects>
+                <viewController storyboardIdentifier="page2" id="l8y-EF-Tmc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vvh-fC-R42"/>
+                        <viewControllerLayoutGuide type="bottom" id="aw1-hZ-k0h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y3X-4t-Xgs">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="保罗克利-肖像.png" translatesAutoresizingMaskIntoConstraints="NO" id="WHq-Yg-oHg">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WHq-Yg-oHg" secondAttribute="trailing" id="0Br-G5-dbG"/>
+                            <constraint firstItem="WHq-Yg-oHg" firstAttribute="top" secondItem="y3X-4t-Xgs" secondAttribute="top" id="Q7M-yH-67b"/>
+                            <constraint firstItem="WHq-Yg-oHg" firstAttribute="leading" secondItem="y3X-4t-Xgs" secondAttribute="leading" id="q3M-KZ-R9C"/>
+                            <constraint firstItem="WHq-Yg-oHg" firstAttribute="bottom" secondItem="aw1-hZ-k0h" secondAttribute="top" id="r7o-Cx-xl5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="WHq-Yg-oHg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Br-G5-dbG"/>
+                                <exclude reference="Q7M-yH-67b"/>
+                                <exclude reference="q3M-KZ-R9C"/>
+                                <exclude reference="r7o-Cx-xl5"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="WHq-Yg-oHg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Br-G5-dbG"/>
+                                <include reference="Q7M-yH-67b"/>
+                                <include reference="q3M-KZ-R9C"/>
+                                <include reference="r7o-Cx-xl5"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XOd-8T-Saj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417" y="-424"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7FI-Vf-oq2">
+            <objects>
+                <viewController storyboardIdentifier="page3" id="6mZ-rB-7h4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NC1-8I-LE4"/>
+                        <viewControllerLayoutGuide type="bottom" id="SqB-4R-Gi2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UyM-nU-Fta">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="罗丹-思想者.png" translatesAutoresizingMaskIntoConstraints="NO" id="pHI-Fg-UOv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pHI-Fg-UOv" firstAttribute="leading" secondItem="UyM-nU-Fta" secondAttribute="leading" id="4Vl-to-86l"/>
+                            <constraint firstItem="pHI-Fg-UOv" firstAttribute="top" secondItem="UyM-nU-Fta" secondAttribute="top" id="KIN-A2-v3n"/>
+                            <constraint firstAttribute="trailing" secondItem="pHI-Fg-UOv" secondAttribute="trailing" id="T9g-Nc-QM0"/>
+                            <constraint firstItem="pHI-Fg-UOv" firstAttribute="bottom" secondItem="SqB-4R-Gi2" secondAttribute="top" id="WUq-vN-t3S"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pHI-Fg-UOv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4Vl-to-86l"/>
+                                <exclude reference="KIN-A2-v3n"/>
+                                <exclude reference="T9g-Nc-QM0"/>
+                                <exclude reference="WUq-vN-t3S"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pHI-Fg-UOv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4Vl-to-86l"/>
+                                <include reference="KIN-A2-v3n"/>
+                                <include reference="T9g-Nc-QM0"/>
+                                <include reference="WUq-vN-t3S"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Mf-iL-g0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="-976"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="保罗克利-肖像.png" width="640" height="960"/>
+        <image name="罗丹-思想者.png" width="640" height="960"/>
+        <image name="达芬奇-蒙娜丽莎.png" width="640" height="960"/>
+    </resources>
+</document>

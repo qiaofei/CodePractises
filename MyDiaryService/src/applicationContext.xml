@@ -32,7 +32,7 @@
 				<value>
 					com/wqf/mydiary/diary/entity/DiaryInfo.hbm.xml
 				</value>
-			</list>
+				<value>com/_08vip/www/user/entity.hbm.xml</value></list>
 		</property>
 	</bean>
 </beans>

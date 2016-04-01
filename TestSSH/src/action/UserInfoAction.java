@@ -1,14 +1,11 @@
 package action;
 
-import com.util.trans.TransMsg;
-
 import entity.UserInfo;
 import biz.UserInfoService;
-
 public class UserInfoAction {
 	private UserInfoService userInfoService;
 	private TransMsg transMsg;
-	// ÄÃµ½ÓÃ»§ÃûºÍÓÃ»§ÃÜÂë
+	// ï¿½Ãµï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String userName;
 	private String userPassword;
 

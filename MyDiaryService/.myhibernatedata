@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Thu Jan 14 18:02:53 CST 2016
+#Wed Mar 23 10:16:11 CST 2016
 sessionFactoryName=
 genBasicCompId=false
 profile=
@@ -11,14 +11,14 @@ reStrategyClass=
 detectO2O=false
 springDaoFile=
 useJavaTypes=true
-keyGenerator=
+keyGenerator=identity
 libInstallFolder=/WebRoot/WEB-INF/lib
 addLibs2Project=true
 genVersionTag=false
 sessionFactoryId=sessionFactory
 basePersistenceClass=
 genAnnotations=false
-reSettingsFile=
+reSettingsFile=/MyDiaryService/hibernate.reveng.xml
 configFile=/MyDiaryService/src/applicationContext.xml
 createConfigFile=false
 addLibs2Classpath=true
